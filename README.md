@@ -2,7 +2,7 @@
 
 # Implementações escolhidas
 - Calculadora de Salário - Williamberg Ferreira (117210904)
-- Processador de Boletos - Laerson Verissimo (116110062)
+- Processador de Boletos - Laerson Verissimo (116110062) (https://github.com/Laerson/processador-boletos)
 
 # Avaliando a experiência com TDD
 Acreditamos que há um tradeoff na utilização do TDD. Por um lado, foi interessante a experiência de se desenvolver primeiro os testes seguindo a especificação, o que em nossa opinião dificulta a possibilidade de acabar enviesando 
