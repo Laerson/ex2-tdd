@@ -44,6 +44,14 @@ public class CalculadoraSalarioTest {
     }
 
     @Test
+    public void testCamposInvalidos() {
+        assertEquals("Silvanno", desenvolvedorJunior.getNome());
+        assertEquals("principedosteclados@gmail.com", gerenteJunior.getEmail());
+        assertEquals(8000.00, testadorSenior.getSalarioBase());
+        assertEquals(Cargo.DBA, dbaJunior.getCargo());
+    }
+
+    @Test
     public void testSalarioDesenvolvedor() {
         double salarioBaseSenior = desenvolvedorSenior.getSalarioBase();
         double salarioBaseJunior = desenvolvedorJunior.getSalarioBase();
