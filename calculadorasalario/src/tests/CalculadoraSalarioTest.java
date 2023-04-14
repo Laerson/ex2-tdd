@@ -1,6 +1,6 @@
 package calculadorasalario.src.tests;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.Before;
@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import calculadorasalario.src.main.Funcionario;
 import calculadorasalario.src.main.Calculadora;
+import calculadorasalario.src.main.Cargo;
 
 public class CalculadoraSalarioTest {
 
@@ -23,26 +24,26 @@ public class CalculadoraSalarioTest {
 
     @Before
     public void setup() {
-        desenvolvedorJunior = new Funcionario("Silvanno", "salles@gmail.com", 2800, "Desenvolvedor");
-        desenvolvedorSenior = new Funcionario("Reginaldo", "rossi@gmail.com", 10000, "Desenvolvedor");
-        dbaJunior = new Funcionario("Tayrone", "cigano@gmail.com", 1800, "Dba");
-        dbaSenior = new Funcionario("Waldick", "soriano@gmail.com", 8000, "Dba");
-        testadorJunior = new Funcionario("Leo", "magalhaes@gmail.com", 1800, "Testador");
-        testadorSenior = new Funcionario("Pablo", "arrocha@gmail.com", 8000, "Testador");
-        gerenteJunior = new Funcionario("Zezo", "principedosteclados@gmail.com", 4800, "Gerente");
-        gerenteSenior = new Funcionario("Amado", "batista@gmail.com", 12000, "Gerente");
+        desenvolvedorJunior = new Funcionario("Silvanno", "salles@gmail.com", 2800, Cargo.DESENVOLVEDOR);
+        desenvolvedorSenior = new Funcionario("Reginaldo", "rossi@gmail.com", 10000, Cargo.DESENVOLVEDOR);
+        dbaJunior = new Funcionario("Tayrone", "cigano@gmail.com", 1800, Cargo.DBA);
+        dbaSenior = new Funcionario("Waldick", "soriano@gmail.com", 8000, Cargo.DBA);
+        testadorJunior = new Funcionario("Leo", "magalhaes@gmail.com", 1800, Cargo.TESTADOR);
+        testadorSenior = new Funcionario("Pablo", "arrocha@gmail.com", 8000, Cargo.TESTADOR);
+        gerenteJunior = new Funcionario("Zezo", "principedosteclados@gmail.com", 4800, Cargo.GERENTE);
+        gerenteSenior = new Funcionario("Amado", "batista@gmail.com", 12000, Cargo.GERENTE);
     }
 
     @Test
-    void testFuncionarioBuilder() {
+    public void testFuncionarioBuilder() {
         assertEquals("Silvanno", desenvolvedorJunior.getNome());
         assertEquals("principedosteclados@gmail.com", gerenteJunior.getEmail());
-        assertEquals("8000", testadorSenior.getSalarioBase());
-        assertEquals("DBA", dbaJunior.getCargo());
+        assertEquals(8000.00, testadorSenior.getSalarioBase());
+        assertEquals(Cargo.DBA, dbaJunior.getCargo());
     }
 
     @Test
-    void testSalarioDesenvolvedor() {
+    public void testSalarioDesenvolvedor() {
         double salarioBaseSenior = desenvolvedorSenior.getSalarioBase();
         double salarioBaseJunior = desenvolvedorJunior.getSalarioBase();
         double descontoDevSenior = salarioBaseSenior * 0.20;
@@ -52,7 +53,7 @@ public class CalculadoraSalarioTest {
     }
 
     @Test
-    void testSalarioDBA() {
+    public void testSalarioDBA() {
         double salarioBaseSenior = dbaSenior.getSalarioBase();
         double salarioBaseJunior = dbaJunior.getSalarioBase();
         double descontoSenior = salarioBaseSenior * 0.25;
@@ -63,7 +64,7 @@ public class CalculadoraSalarioTest {
     }
 
     @Test
-    void testSalarioTestador() {
+    public void testSalarioTestador() {
         double salarioBaseSenior = desenvolvedorSenior.getSalarioBase();
         double salarioBaseJunior = desenvolvedorJunior.getSalarioBase();
         double descontoSenior = salarioBaseSenior * 0.25;
@@ -73,7 +74,7 @@ public class CalculadoraSalarioTest {
     }
 
     @Test
-    void testSalarioGerente() {
+    public void testSalarioGerente() {
         double salarioBaseSenior = desenvolvedorSenior.getSalarioBase();
         double salarioBaseJunior = desenvolvedorJunior.getSalarioBase();
         double descontoSenior = salarioBaseSenior * 0.35;
