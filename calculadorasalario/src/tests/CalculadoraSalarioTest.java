@@ -32,6 +32,7 @@ public class CalculadoraSalarioTest {
         testadorSenior = new Funcionario("Pablo", "arrocha@gmail.com", 8000, Cargo.TESTADOR);
         gerenteJunior = new Funcionario("Zezo", "principedosteclados@gmail.com", 4800, Cargo.GERENTE);
         gerenteSenior = new Funcionario("Amado", "batista@gmail.com", 12000, Cargo.GERENTE);
+        calculadora = new Calculadora();
     }
 
     @Test
@@ -48,6 +49,7 @@ public class CalculadoraSalarioTest {
         double salarioBaseJunior = desenvolvedorJunior.getSalarioBase();
         double descontoDevSenior = salarioBaseSenior * 0.20;
         double descontoDevJunior = salarioBaseJunior * 0.10;
+        System.out.println(salarioBaseJunior - descontoDevJunior);
         assertTrue(calculadora.calculaSalario(desenvolvedorJunior) == salarioBaseJunior - descontoDevJunior);
         assertTrue(calculadora.calculaSalario(desenvolvedorSenior) == salarioBaseSenior - descontoDevSenior);
     }
@@ -65,8 +67,8 @@ public class CalculadoraSalarioTest {
 
     @Test
     public void testSalarioTestador() {
-        double salarioBaseSenior = desenvolvedorSenior.getSalarioBase();
-        double salarioBaseJunior = desenvolvedorJunior.getSalarioBase();
+        double salarioBaseSenior = testadorSenior.getSalarioBase();
+        double salarioBaseJunior = testadorJunior.getSalarioBase();
         double descontoSenior = salarioBaseSenior * 0.25;
         double descontoJunior = salarioBaseJunior * 0.15;
         assertTrue(calculadora.calculaSalario(testadorJunior) == salarioBaseJunior - descontoJunior);
@@ -75,9 +77,9 @@ public class CalculadoraSalarioTest {
 
     @Test
     public void testSalarioGerente() {
-        double salarioBaseSenior = desenvolvedorSenior.getSalarioBase();
-        double salarioBaseJunior = desenvolvedorJunior.getSalarioBase();
-        double descontoSenior = salarioBaseSenior * 0.35;
+        double salarioBaseSenior = gerenteSenior.getSalarioBase();
+        double salarioBaseJunior = gerenteJunior.getSalarioBase();
+        double descontoSenior = salarioBaseSenior * 0.30;
         double descontoJunior = salarioBaseJunior * 0.20;
         assertTrue(calculadora.calculaSalario(gerenteJunior) == salarioBaseJunior - descontoJunior);
         assertTrue(calculadora.calculaSalario(gerenteSenior) == salarioBaseSenior - descontoSenior);
