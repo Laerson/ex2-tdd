@@ -40,31 +40,37 @@ public class FunctionalTest {
         assertEquals(desenvolvedor.getSalarioBase(), "Exception: Salário inválido");
     }
 
+    @Test
     public void testSuiteAVLDesenvolvedor2() {
         desenvolvedor.setSalarioBase(0);
         assertEquals(desenvolvedor.getSalarioBase(), 0);
     }
 
+    @Test
     public void testSuiteAVLDesenvolvedor3() {
         desenvolvedor.setSalarioBase(0.01);
         assertEquals(desenvolvedor.getSalarioBase(), 0.01);
     }
 
+    @Test
     public void testSuiteAVLDesenvolvedor4() {
         desenvolvedor.setSalarioBase(1000);
         assertEquals(desenvolvedor.getSalarioBase(), 900);
     }
 
+    @Test
     public void testSuiteAVLDesenvolvedor5() {
         desenvolvedor.setSalarioBase(2999.99);
         assertEquals(desenvolvedor.getSalarioBase(), 2699.99);
     }
 
+    @Test
     public void testSuiteAVLDesenvolvedor6() {
         desenvolvedor.setSalarioBase(3000);
         assertEquals(desenvolvedor.getSalarioBase(), 2400);
     }
 
+    @Test
     public void testSuiteAVLDesenvolvedor7() {
         desenvolvedor.setSalarioBase(3001);
         assertEquals(desenvolvedor.getSalarioBase(), 2400.8);
@@ -78,6 +84,7 @@ public class FunctionalTest {
         assertEquals(dba.getSalarioBase(), "Exception: Salário inválido");
     }
 
+    @Test
     public void testSuiteAVLDBAandTester2() {
         testador.setSalarioBase(0);
         dba.setSalarioBase(0);
@@ -85,6 +92,7 @@ public class FunctionalTest {
         assertEquals(dba.getSalarioBase(), 0);
     }
 
+    @Test
     public void testSuiteAVLDBAandTester3() {
         testador.setSalarioBase(0.01);
         dba.setSalarioBase(0.01);
@@ -92,6 +100,7 @@ public class FunctionalTest {
         assertEquals(dba.getSalarioBase(), 0.01);
     }
 
+    @Test
     public void testSuiteDBAandTester4() {
         testador.setSalarioBase(1000);
         dba.setSalarioBase(1000);
@@ -99,6 +108,7 @@ public class FunctionalTest {
         assertEquals(dba.getSalarioBase(), 800);
     }
 
+    @Test
     public void testSuiteAVLDBAandTester5() {
         testador.setSalarioBase(4999.99);
         dba.setSalarioBase(4999.99);
@@ -106,6 +116,7 @@ public class FunctionalTest {
         assertEquals(dba.getSalarioBase(), 3999.99);
     }
 
+    @Test
     public void testSuiteAVLDBAandTester6() {
         testador.setSalarioBase(5000);
         dba.setSalarioBase(5000);
@@ -113,6 +124,7 @@ public class FunctionalTest {
         assertEquals(dba.getSalarioBase(), 3500);
     }
 
+    @Test
     public void testSuiteAVLDBAandTester7() {
         testador.setSalarioBase(5001);
         dba.setSalarioBase(5001);
@@ -126,31 +138,37 @@ public class FunctionalTest {
         assertEquals(gerente.getSalarioBase(), "Exception: Salário inválido");
     }
 
+    @Test
     public void testSuiteAVLGerente2() {
         gerente.setSalarioBase(0);
         assertEquals(gerente.getSalarioBase(), 0);
     }
 
+    @Test
     public void testSuiteAVLGerente3() {
         gerente.setSalarioBase(0.01);
         assertEquals(gerente.getSalarioBase(), 0.01);
     }
 
+    @Test
     public void testSuiteAVLGerente4() {
         gerente.setSalarioBase(1000);
         assertEquals(gerente.getSalarioBase(), 1000);
     }
 
+    @Test
     public void testSuiteAVLGerente5() {
         gerente.setSalarioBase(4999.99);
         assertEquals(gerente.getSalarioBase(), 3999.99);
     }
 
+    @Test
     public void testSuiteAVLGerente6() {
         gerente.setSalarioBase(5000);
         assertEquals(gerente.getSalarioBase(), 3500);
     }
 
+    @Test
     public void testSuiteAVLGerente7() {
         gerente.setSalarioBase(5001);
         assertEquals(gerente.getSalarioBase(), 3500.7);
